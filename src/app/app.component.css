@@ -1,0 +1,320 @@
+/*################## COMUNES ##################*/
+
+body {
+    padding-top: 5em;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+/*################## BODY ##################*/
+
+.txt-nav-body{
+    text-decoration:none;
+    text-align: center;
+    font-size: 1.25em;
+}
+
+/*################## MARGIN ##################*/
+.mr-1{
+    margin-right: 1em;
+}
+
+.mt-1em{
+    margin-bottom: auto;
+}
+
+.my-15{
+    margin-left: 5em;
+    margin-right: 5em;
+    padding-top: 5em;
+}
+
+/*##################  ##################*/
+.row-custom {
+    position: relative;
+}
+.row-custom::after {
+    content: '';
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(146, 147, 98); /* Cambiar el valor de hexadecimal para modificar el color */
+    height: 12em; /* Cambiar el valor para modificar la altura del fondo */
+    width: 100%; /* Cambiar el valor para modificar la anchura del fondo */
+    z-index: -1;
+}
+.row-custom .col-6 {
+    margin-top: 50px; /* Establecer un margen superior para evitar que se superpongan con el fondo */
+}
+.rotate-3s-stop-5s {
+    animation: fall 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1;
+  }
+.stop {
+    animation: none;
+    animation-delay: 5s;
+}
+  
+/*################## TEXTO ##################*/
+
+.txt-deco-none{
+    text-decoration:none
+}
+
+.tjustify{
+    text-align: justify;
+}
+.bold {
+    font-weight: 900;
+}
+.f-txt-gotham{
+    font-family: 'Gotham', sans-serif;
+}
+.f-size-075{
+    font-size: 0.75em;
+}
+.fs-8{
+    font-size: 8em;
+}
+
+/*################## COLOR ##################*/
+
+.bg-black{
+    background-color: black;
+}
+.c-white{
+    color: black;
+}
+
+/*################## SVG ##################*/
+
+.facebook-icon svg{
+    color: blue;
+    width: 5em;
+    height: 3em;
+}
+.instagram-icon svg {
+    fill: #833ab4; 
+    width: 5em;
+    height: 3em;
+}
+.github-icon svg {
+    fill: #090909; 
+    width: 5em;
+    height: 3em;
+}
+
+/*################## PADDING ##################*/
+
+.footer-phone{
+    padding: 0.25em;
+    border: 0.1em solid rgb(9, 9, 9);
+    outline: 0.1em solid blue;
+    color: rgb(186, 19, 19);
+}
+.pad-header{
+    padding-top: 1em;
+    padding-right: 4em !important;
+    letter-spacing: 0.2em;
+}
+.pad-205em{
+    padding-top: 2.5em;
+}
+
+/*################## HOVER ##################*/
+.hover-yellow:hover {
+    color: rgb(177, 180, 45);
+    transition: 1s;
+}
+
+.hover-bd1 {
+    position: relative;
+}
+.hover-bd1:hover::before {
+    content: "";
+    position: absolute;
+    left: 2.5em;
+    bottom: 0;
+    width: 82%;
+    height: 0.4em;
+    background-color: rgb(177, 180, 45);
+    animation: slide-in 0.3s ease-out;
+}
+
+.nav-link {
+    position: relative;
+}
+.nav-link:hover::before {
+    content: "";
+    position: absolute;
+    left: 0.75em;
+    bottom: 0;
+    width: 50%;
+    height: 0.4em;
+    background-color: rgb(177, 180, 45);
+    animation: slide-in 0.3s ease-out;
+}
+
+
+
+/*################## ANIMATION ##################*/
+@keyframes slide-in {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+}
+
+@keyframes fall {
+    0% {
+      transform: translateY(-200px);
+      opacity: 0;
+    }
+    40% {
+      transform: translateY(20px);
+      opacity: 1;
+    }
+    80% {
+      transform: translateY(-10px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+
+/*################## RESPONSIVE ##################*/
+
+@media (max-width: 365px) { /* Dispositivos pequeños */
+    .container-fluid{
+        padding-right: 0.1em;
+    }
+    .fs-8 {
+        font-size: 5em;
+    }
+      .nav-link:hover::before{
+          width: 15%;
+          height: 0.5em;
+    }
+      .hover-bd1:hover::before {
+          width: 70%;
+          height: 0.5em;
+    }
+      .mt-1em{
+        margin-bottom: 2em;
+        margin-top: 1em;
+    }
+      .my-15{
+          margin-left: 0.5em;
+          margin-right: 0.5em;
+    }
+    .facebook-icon svg{
+        color: blue;
+        width: 3em;
+        height: 3em;
+    }
+    .instagram-icon svg {
+        fill: #833ab4; 
+        width: 3em;
+        height: 3em;
+    }
+    .github-icon svg {
+        fill: #090909; 
+        width: 3em;
+        height: 3em;
+    }
+}
+
+@media (min-width:366px) and (max-width: 576px)  { /* Dispositivos pequeños */
+    .fs-8 {
+      font-size: 5em;
+    }
+    .nav-link:hover::before{
+        width: 10%;
+        height: 0.5em;
+    }
+    .hover-bd1:hover::before {
+        width: 70%;
+        height: 0.5em;
+    }
+    .mt-1em{
+        margin-bottom: 2em;
+        margin-top: 1em;
+    }
+    .my-15{
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+    .facebook-icon svg{
+        color: blue;
+        width: 3em;
+        height: 3em;
+    }
+    .instagram-icon svg {
+        fill: #833ab4; 
+        width: 3em;
+        height: 3em;
+    }
+    .github-icon svg {
+        fill: #090909; 
+        width: 3em;
+        height: 3em;
+    }
+}
+  
+@media (min-width: 577px) and (max-width: 768px) { /* Dispositivos medianos */
+    .fs-8 {
+      font-size: 5em;
+    }
+    .nav-link:hover::before{
+        width: 7%;
+        height: 0.5em;
+    }
+    .mt-1em{
+        margin-bottom: 2em;
+        margin-top: 1em;
+    }
+    .my-15{
+        margin-left: 0.75em;
+        margin-right: 0.75em;
+    }
+
+}
+  
+@media (min-width: 769px) and (max-width: 992px) { /* Dispositivos grandes */
+    .fs-8 {
+      font-size: 6em;
+    }
+    .nav-link:hover::before{
+        width: 5%;
+        height: 0.5em;
+    }
+    .mt-1em{
+        margin-top: 1em;
+    }
+    .my-15{
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}
+  
+@media (min-width: 993px) and  (max-width: 1199px){ /* Dispositivos extra grandes */
+    .fs-8 {
+      font-size: 7em;
+    }
+    .my-15{
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+}
+
+@media (min-width: 1200px) { /* Dispositivos extra extra grandes */
+
+}
